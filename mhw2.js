@@ -1,7 +1,7 @@
-const element = document.querySelector('#button-menu');
+const buttonMenuLines = document.querySelector('#button-menu');
 const layout = document.querySelector('.central-layout');
 
-element.addEventListener('click', () => {
+buttonMenuLines.addEventListener('click', () => {
     let sidebarContent = document.querySelector('.left-sidebar');
     let currentDisplay = getComputedStyle(sidebarContent).display;
 
@@ -19,12 +19,34 @@ element.addEventListener('click', () => {
 })
 
 
-const profile = document.querySelector('.button-profile');
+const buttonProfile = document.querySelector('#button-profile');
+const personalMenu = document.querySelector('.personal-menu');
 
-element.addEventListener('click', () => {
+buttonProfile.addEventListener('click', () => {
+    let currentDisplay = getComputedStyle(personalMenu).display;
 
-})
+    if (currentDisplay === 'none' || currentDisplay === '') {
+        personalMenu.style.display = 'flex';
+    } else {
+        personalMenu.style.display = 'none';
+    }
+});
 
 
+let changeButton = document.querySelector('[data-action="change-picture"]');
+let pic = document.querySelector('#profpic');
+let menuPic = document.querySelector('#profpic-menu');
+let imageOptions = ['pf1.jpg', 'pf2.jpg', 'pf3.jpg']; 
 
+let lastImage = null;
 
+changeButton.addEventListener('click', () => {
+    let randomImage;
+    do {
+        randomImage = imageOptions[Math.floor(Math.random() * imageOptions.length)];
+    } while (randomImage === lastImage);
+
+    pic.src = randomImage;
+    menuPic.src = randomImage;
+    lastImage = randomImage;
+});
