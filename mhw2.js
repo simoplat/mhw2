@@ -36,14 +36,14 @@ buttonProfile.addEventListener('click', () => {
 let changeButton = document.querySelector('[data-action="change-picture"]');
 let pic = document.querySelector('#profpic');
 let menuPic = document.querySelector('#profpic-menu');
-let imageOptions = ['pf1.jpg', 'pf2.jpg', 'pf3.jpg']; 
+let imageList = ['pf1.jpg', 'pf2.jpg', 'pf3.jpg']; 
 
 let lastImage = null;
 
 changeButton.addEventListener('click', () => {
     let randomImage;
     do {
-        randomImage = imageOptions[Math.floor(Math.random() * imageOptions.length)];
+        randomImage = imageList[Math.floor(Math.random() * imageList.length)];
     } while (randomImage === lastImage);
 
     pic.src = randomImage;
