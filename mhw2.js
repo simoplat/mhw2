@@ -16,4 +16,15 @@ element.addEventListener('click', () => {
         layout.style.width ='100%';
         layout.style.height ='100%';
     }
-});
+})
+
+
+const profile = document.querySelector('.button-profile');
+
+element.addEventListener('click', () => {
+
+})
+
+
+
+
