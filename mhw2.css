@@ -119,6 +119,8 @@ header {
   background-color: rgb(255, 255, 255);
 }
 
+#se
+
 #notify-button:hover, 
 #mic-button:hover, 
 #search-button:hover {
@@ -128,6 +130,9 @@ header {
 
 #mic-img {
   max-height: 25px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
 
 #search-bar {
@@ -329,7 +334,7 @@ header {
 .video-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 15px;
+  gap: 30px;
   justify-content: center;
   max-width: 100%;
   box-sizing: border-box;
@@ -452,11 +457,14 @@ header {
 }
 
 .nav-center button{
-  padding: 10px;
+  width: 50px;
+  height: 50px;
+  padding: 15px;
   border-radius: 100px;
   border: none;
   transition: background-color 0.3s ease;
-  margin: 0px 2%;
+  margin: 0px 2px;
+  position: relative;
 }
 
 .nav-center button:hover {
