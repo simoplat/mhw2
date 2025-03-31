@@ -753,3 +753,8 @@ footer:hover {
   padding: 15px;
   font-size: 14px;
 }
+
+
+.notify-menu {
+  display: none;
+}

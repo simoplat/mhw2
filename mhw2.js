@@ -23,12 +23,17 @@ const buttonProfile = document.querySelector('#button-profile');
 const personalMenu = document.querySelector('.personal-menu');
 
 buttonProfile.addEventListener('click', () => {
-    let currentDisplay = getComputedStyle(personalMenu).display;
+    
 
-    if (currentDisplay === 'none' || currentDisplay === '') {
+    if (personalMenu.dataset.display === 'hidden') {
         personalMenu.style.display = 'flex';
+        personalMenu.dataset.display='show';
+        console.log('Setto display show');
     } else {
+        console.log('B');
+        personalMenu.dataset.display='hidden';
         personalMenu.style.display = 'none';
+        console.log("Setto display hidden")
     }
 });
 
@@ -49,4 +54,22 @@ changeButton.addEventListener('click', () => {
     pic.src = randomImage;
     menuPic.src = randomImage;
     lastImage = randomImage;
+});
+
+
+
+const notifyButton = document.querySelector('#notify-button');
+const notifyMenu = document.querySelector('.notify-menu');
+
+notifyButton.addEventListener('click', () => {
+
+    if (notifyMenu.dataset.display === 'hidden') {
+        notifyMenu.style.display = 'flex';
+        notifyMenu.dataset.display='show';
+        console.log('Setto display show');
+    } else {
+        notifyMenu.dataset.display='hidden';
+        notifyMenu.style.display = 'none';
+        console.log("Setto display hidden")
+    }
 });
