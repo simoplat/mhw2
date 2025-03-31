@@ -96,11 +96,13 @@ header {
 }
 
 
-.sidebar-inside, h1 {
+.sidebar-inside {
   cursor: pointer;
 }
 
-
+.sidebar-content h1 img:hover {
+  cursor: pointer;
+}
 
 
 #profpic {
@@ -184,6 +186,7 @@ header {
   height: calc(100vh - 100px);
   background-color: white;
   overflow-y: auto; 
+  overflow-x: hidden;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -512,6 +515,13 @@ header {
   text-align: left;
   font-size: 100%;
   margin-left: 12px;
+  margin-bottom: 15px;
+  margin-top: 5Spx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 
@@ -534,11 +544,6 @@ header {
   margin-bottom: 8px;
 }
 
-.sidebar-content h1:hover{
-  transition: color 0.2s ease-in-out;
-  transition: text-decoration 0.2s ease-in-out;
-  text-decoration: underline;
-}
 
 .sidebar-h button:hover {
   border: none;
@@ -779,4 +784,16 @@ footer:hover {
   width: max-content;
   max-width: 200px;
   font-size: 12px;
+}
+
+
+
+.toggle[data-type="down"] {
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.toggle[data-type="up"] {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease-in-out;
 }

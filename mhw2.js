@@ -88,13 +88,19 @@ notifyButton.addEventListener('click', () => {
 
 
 function nascontiContenuti(dataType) {
-    document.querySelectorAll(`h1[data-type="${dataType}"]`).forEach(h1 => {
-        h1.addEventListener('click', () => {
+    document.querySelectorAll(`h1[data-type="${dataType}"] img`).forEach(img => {
+        img.addEventListener('click', () => {
             document.querySelectorAll(`.sidebar-h[data-type="${dataType}"]`).forEach(sidebar => {
-                if (sidebar.style.display === 'none') {
+                let sidebarDisplay = getComputedStyle(sidebar).display;
+                
+                if (sidebarDisplay === 'none') {
                     sidebar.style.display = 'flex';
+                    img.dataset.type = 'down';
+                    console.log('A');
                 } else {
                     sidebar.style.display = 'none';
+                    img.dataset.type = 'up';
+                    console.log('B');
                 }
             });
         });
