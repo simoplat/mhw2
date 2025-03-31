@@ -26,11 +26,14 @@ buttonProfile.addEventListener('click', () => {
     
 
     if (personalMenu.dataset.display === 'hidden') {
+        if (notifyMenu.style.display === 'flex') {
+            notifyMenu.style.display = 'none';
+            notifyMenu.dataset.display = 'hidden';
+        }
         personalMenu.style.display = 'flex';
         personalMenu.dataset.display='show';
         console.log('Setto display show');
     } else {
-        console.log('B');
         personalMenu.dataset.display='hidden';
         personalMenu.style.display = 'none';
         console.log("Setto display hidden")
@@ -64,8 +67,17 @@ const notifyMenu = document.querySelector('.notify-menu');
 notifyButton.addEventListener('click', () => {
 
     if (notifyMenu.dataset.display === 'hidden') {
+        if (personalMenu.style.display === 'flex') {
+            personalMenu.style.display = 'none';
+            personalMenu.dataset.display = 'hidden';
+        }
         notifyMenu.style.display = 'flex';
         notifyMenu.dataset.display='show';
+        if (!notifyMenu.querySelector('p')) {
+            let notifyContent = document.createElement('p');
+            notifyContent.textContent = 'Nessuna notifica';
+            notifyMenu.appendChild(notifyContent);
+        }
         console.log('Setto display show');
     } else {
         notifyMenu.dataset.display='hidden';
@@ -73,3 +85,22 @@ notifyButton.addEventListener('click', () => {
         console.log("Setto display hidden")
     }
 });
+
+
+function nascontiContenuti(dataType) {
+    document.querySelectorAll(`h1[data-type="${dataType}"]`).forEach(h1 => {
+        h1.addEventListener('click', () => {
+            document.querySelectorAll(`.sidebar-h[data-type="${dataType}"]`).forEach(sidebar => {
+                if (sidebar.style.display === 'none') {
+                    sidebar.style.display = 'flex';
+                } else {
+                    sidebar.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Example usage:
+nascontiContenuti('Tu');
+nascontiContenuti('channel');
