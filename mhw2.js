@@ -91,15 +91,14 @@ function nascontiContenuti(dataType) {
     document.querySelectorAll(`h1[data-type="${dataType}"] img`).forEach(img => {
         img.addEventListener('click', () => {
             document.querySelectorAll(`.sidebar-h[data-type="${dataType}"]`).forEach(sidebar => {
-                let sidebarDisplay = getComputedStyle(sidebar).display;
-                
+
                 if (sidebar.classList.contains('hidden')) {
                     sidebar.classList.remove('hidden');
-                    img.dataset.type = 'down';
+                    img.dataset.type = 'up';
                     console.log('A');
                 } else {
                     sidebar.classList.add('hidden');
-                    img.dataset.type = 'up';
+                    img.dataset.type = 'down';
                     console.log('B');
                 }
             });
