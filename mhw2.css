@@ -712,7 +712,7 @@ footer:hover {
   height: auto;
   background:white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  display: none;
+  display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -769,7 +769,7 @@ footer:hover {
   height: auto;
   background:rgb(255, 255, 255);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  display: none;
+  display: flex;
   gap: 10px;
   align-items: center;
   flex-direction: column;

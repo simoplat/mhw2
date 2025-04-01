@@ -26,17 +26,11 @@ const personalMenu = document.querySelector('.personal-menu');
 function toggleProfMenu(){
     
 
-    if (personalMenu.dataset.display === 'hidden') {
-        if (notifyMenu.style.display === 'flex') {
-            notifyMenu.style.display = 'none';
-            notifyMenu.dataset.display = 'hidden';
-        }
-        personalMenu.style.display = 'flex';
-        personalMenu.dataset.display='show';
+    if (personalMenu.classList.contains('hidden')) {
+        personalMenu.classList.remove('hidden');
         console.log('Setto display show');
     } else {
-        personalMenu.dataset.display='hidden';
-        personalMenu.style.display = 'none';
+        personalMenu.classList.add('hidden');
         console.log("Setto display hidden")
     }
 }
@@ -74,22 +68,12 @@ const notifyMenu = document.querySelector('.notify-menu');
 
 function toggleNotifyMenu () {
 
-    if (notifyMenu.dataset.display === 'hidden') {
-        if (personalMenu.style.display === 'flex') {
-            personalMenu.style.display = 'none';
-            personalMenu.dataset.display = 'hidden';
-        }
-        notifyMenu.style.display = 'flex';
-        notifyMenu.dataset.display='show';
-        if (!notifyMenu.querySelector('p')) {
-            let notifyContent = document.createElement('p');
-            notifyContent.textContent = 'Nessuna notifica';
-            notifyMenu.appendChild(notifyContent);
-        }
+    if (notifyMenu.classList.contains('hidden')) {
+        
+        notifyMenu.classList.remove('hidden');
         console.log('Setto display show');
     } else {
-        notifyMenu.dataset.display='hidden';
-        notifyMenu.style.display = 'none';
+        notifyMenu.classList.add('hidden');
         console.log("Setto display hidden")
     }
 };
