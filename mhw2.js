@@ -27,6 +27,9 @@ function toggleProfMenu(){
     
 
     if (personalMenu.classList.contains('hidden')) {
+        if(!notifyMenu.classList.contains('hidden')){
+            notifyMenu.classList.add('hidden');
+        }
         personalMenu.classList.remove('hidden');
         console.log('Setto display show');
     } else {
@@ -69,7 +72,9 @@ const notifyMenu = document.querySelector('.notify-menu');
 function toggleNotifyMenu () {
 
     if (notifyMenu.classList.contains('hidden')) {
-        
+        if(!personalMenu.classList.contains('hidden')){
+            personalMenu.classList.add('hidden');
+        }
         notifyMenu.classList.remove('hidden');
         console.log('Setto display show');
     } else {
