@@ -1,7 +1,8 @@
+// toggle menu a sinistra in alto
 const buttonMenuLines = document.querySelector('#button-menu');
 const layout = document.querySelector('.central-layout');
 
-buttonMenuLines.addEventListener('click', () => {
+function toggleMenuSidebar(){
     let sidebarContent = document.querySelector('.left-sidebar');
     let currentDisplay = getComputedStyle(sidebarContent).display;
 
@@ -16,13 +17,16 @@ buttonMenuLines.addEventListener('click', () => {
         layout.style.width ='100%';
         layout.style.height ='100%';
     }
-})
+}
+
+buttonMenuLines.addEventListener('click', toggleMenuSidebar);
 
 
+// toggle menu profilo
 const buttonProfile = document.querySelector('#button-profile');
 const personalMenu = document.querySelector('.personal-menu');
 
-buttonProfile.addEventListener('click', () => {
+function toggleProfMenu(){
     
 
     if (personalMenu.dataset.display === 'hidden') {
@@ -38,8 +42,12 @@ buttonProfile.addEventListener('click', () => {
         personalMenu.style.display = 'none';
         console.log("Setto display hidden")
     }
-});
+}
 
+buttonProfile.addEventListener('click', toggleProfMenu);
+
+
+// funzione per cambiare immagine profilo
 
 let changeButton = document.querySelector('[data-action="change-picture"]');
 let pic = document.querySelector('#profpic');
@@ -48,7 +56,7 @@ let imageList = ['pf1.jpg', 'pf2.jpg', 'pf3.jpg'];
 
 let lastImage = null;
 
-changeButton.addEventListener('click', () => {
+function randomImgChange (){
     let randomImage;
     do {
         randomImage = imageList[Math.floor(Math.random() * imageList.length)];
@@ -57,14 +65,17 @@ changeButton.addEventListener('click', () => {
     pic.src = randomImage;
     menuPic.src = randomImage;
     lastImage = randomImage;
-});
+}
+
+changeButton.addEventListener('click', randomImgChange);
+
 
 
 
 const notifyButton = document.querySelector('#notify-button');
 const notifyMenu = document.querySelector('.notify-menu');
 
-notifyButton.addEventListener('click', () => {
+function toggleNotifyMenu () {
 
     if (notifyMenu.dataset.display === 'hidden') {
         if (personalMenu.style.display === 'flex') {
@@ -84,7 +95,10 @@ notifyButton.addEventListener('click', () => {
         notifyMenu.style.display = 'none';
         console.log("Setto display hidden")
     }
-});
+};
+
+notifyButton.addEventListener('click', toggleNotifyMenu);
+
 
 
 function nascontiContenuti(dataType) {
