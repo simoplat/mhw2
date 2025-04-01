@@ -75,6 +75,12 @@ function toggleNotifyMenu () {
         if(!personalMenu.classList.contains('hidden')){
             personalMenu.classList.add('hidden');
         }
+        if (notifyMenu.querySelectorAll('p').length === 0) {
+            let noNotification = document.createElement('p');
+            noNotification.textContent = 'Nessuna notifica';
+            // noNotification.classList.add('sdbar-ins-txt');
+            notifyMenu.appendChild(noNotification);
+        }
         notifyMenu.classList.remove('hidden');
         console.log('Setto display show');
     } else {
