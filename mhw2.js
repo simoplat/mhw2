@@ -104,12 +104,12 @@ function nascontiContenuti(dataType) {
             document.querySelectorAll(`.sidebar-h[data-type="${dataType}"]`).forEach(sidebar => {
                 let sidebarDisplay = getComputedStyle(sidebar).display;
                 
-                if (sidebarDisplay === 'none') {
-                    sidebar.style.display = 'flex';
+                if (sidebar.classList.contains('hidden')) {
+                    sidebar.classList.remove('hidden');
                     img.dataset.type = 'down';
                     console.log('A');
                 } else {
-                    sidebar.style.display = 'none';
+                    sidebar.classList.add('hidden');
                     img.dataset.type = 'up';
                     console.log('B');
                 }
