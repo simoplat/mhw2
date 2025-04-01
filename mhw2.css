@@ -797,3 +797,12 @@ footer:hover {
   transform: rotate(180deg);
   transition: transform 0.2s ease-in-out;
 }
+
+.expand {
+  left: 0px;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
