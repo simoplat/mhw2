@@ -1,6 +1,7 @@
 // toggle menu a sinistra in alto
 const buttonMenuLines = document.querySelector('#button-menu');
 const layout = document.querySelector('.central-layout');
+const buttonMenuMobile = document.querySelector('#button-menu-mobile');
 
 function toggleMenuSidebar(){
     let sidebarContent = document.querySelector('.left-sidebar');
@@ -17,7 +18,7 @@ function toggleMenuSidebar(){
 }
 
 buttonMenuLines.addEventListener('click', toggleMenuSidebar);
-
+buttonMenuMobile.addEventListener('click', toggleMenuSidebar);
 
 // toggle menu profilo
 const buttonProfile = document.querySelector('#button-profile');
@@ -38,7 +39,27 @@ function toggleProfMenu(){
     }
 }
 
+
 buttonProfile.addEventListener('click', toggleProfMenu);
+
+const mediaQuery = window.matchMedia('(max-width: 750px)');
+
+function MediaChange(e) {
+let sidebarContent = document.querySelector('.left-sidebar');
+  if (e.matches) {  
+    console.log('media query');
+        
+        // Se la sidebar è visibile, fa il toggle e nasconde
+        if (!sidebarContent.classList.contains('hidden')) {
+            console.log('Faccio il toggle');
+            toggleMenuSidebar();
+        } 
+    }
+}
+
+MediaChange(mediaQuery);
+mediaQuery.addEventListener('change', MediaChange);
+
 
 
 // funzione per cambiare immagine profilo

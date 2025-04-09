@@ -292,11 +292,19 @@ header {
   }
 
 
-  footer, .left-sidebar {
+  footer{
     position: static !important;
     display: none !important; 
   }
 
+  .left-sidebar{
+    width: 100%;
+  }
+
+  .sidebar-content{
+    width: 100%;
+
+  }
 
 
   .video-thumbnail img {
@@ -318,6 +326,9 @@ header {
     flex-shrink: 1;
   }
 
+  .sdbar-ins-txt p{
+    font-size: 25px !important;
+  }
 
 }
 
