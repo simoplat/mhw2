@@ -44,9 +44,9 @@ buttonProfile.addEventListener('click', toggleProfMenu);
 
 const mediaQuery = window.matchMedia('(max-width: 750px)');
 
-function MediaChange(e) {
+function MediaChange(parametro) {
 let sidebarContent = document.querySelector('.left-sidebar');
-  if (e.matches) {  
+  if (parametro.matches) {  
     console.log('media query');
         
         // Se la sidebar è visibile, fa il toggle e nasconde

@@ -117,10 +117,17 @@ header {
 }
 
 
-#notify-button, #mic-button,#search-button{
+#notify-button, #mic-button{
   background-color: rgb(255, 255, 255);
 }
 
+#search-button {
+  border-radius: 0 40px 40px 0;
+  background-color: #e9e9e9;
+  margin-left: 0px;
+  height: 42px;
+  width: 55px;
+}
 
 
 #notify-button:hover, 
@@ -141,7 +148,7 @@ header {
   max-width: 400px;
   padding: 10px 40px 10px 15px;
   border: 2px solid #ccc;
-  border-radius: 20px;
+  border-radius: 20px 0px 0px 20px;
   font-size: 15px;
   transition: width 0.3s ease-in-out;
   white-space: nowrap;
@@ -233,7 +240,7 @@ header {
     width: 50px;
     height: 50px;
     background-color: white;
-
+    border-radius: 40px;
   }
 
   .nav-right{
